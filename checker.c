@@ -18,7 +18,7 @@ if (temperature < 0 || temperature > 45)
 {
 result =  E_NOT_OK;
 }
-printf("%d", result);
+printf("Temperature out of range!\n");
 return result;
 }
 
@@ -28,7 +28,7 @@ if(soc < 20 || soc > 80)
 {
 result =  E_NOT_OK;
 }
-printf("%d", result);
+printf("State of Charge out of range!\n");
 return result;
 }
 
@@ -38,7 +38,7 @@ if(chargeRate > 0.8)
 {
 result =  E_NOT_OK;
 }
-printf("%d", result);
+printf("Charge Rate out of range!\n");
 return result;
 }
     
