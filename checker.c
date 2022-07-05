@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <assert.h>
 
+int Checktemperature(float temperature);
+int checkSoc(float soc);
+int checkChargerate(float chargeRate);
+
 #define E_NOT_OK 0
 #define E_OK     1
 
@@ -26,7 +30,7 @@ result =  E_OK;
 return result;
 }
 
-int checkChargerate(float chargerate){
+int checkChargerate(float chargeRate){
 int result = E_NOT_OK;
 if(chargeRate > 0.8)
 {
