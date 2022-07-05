@@ -10,5 +10,5 @@
 int Checktemperature(float temperature);
 int checkSoc(float soc);
 int checkChargerate(float chargeRate);
-int checkparametermargin(float param,float min_margin , float max_margin);
-int checkparalimit(float param, float limit);
+int checkParameterMargin(float param,float min_margin , float max_margin);
+int checkParameterLimit(float param, float limit);
