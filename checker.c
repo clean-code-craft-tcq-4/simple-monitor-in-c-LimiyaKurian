@@ -45,8 +45,8 @@ return result;
 int main() {
   assert(Checktemperature(25));
   assert(checkSoc(70));
-  assert(checkChargerate(0.9));
-  assert(batteryIsOk(25, 70, 0.9));
+  assert(checkChargerate(0.7));
+  assert(batteryIsOk(25, 70, 0.7));
   assert(!batteryIsOk(50, 85, 0));
 }
     
