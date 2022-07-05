@@ -7,11 +7,11 @@ return (Checktemperature(temperature) && checkSoc(soc) && checkChargerate(charge
 }
 
 int Checktemperature(float temperature){
-return checkparameter(temperature,TEMP_MIN,TEMP_MAX) ;
+return checkparametermargin(temperature,TEMP_MIN,TEMP_MAX) ;
 }
 
 int checkSoc(float soc){
-return checkparameter(soc, SOC_MIN, SOC_MAX);
+return checkparametermargin(soc, SOC_MIN, SOC_MAX);
 }
 
 int checkChargerate(float chargeRate){
