@@ -5,12 +5,12 @@
 #define E_OK     1
 
 int batteryIsOk(float temperature, float soc, float chargeRate) {
-return(Checktemperature(temperature) && checkSoc(soc) && checkChargerate(chargeRate))
+return (Checktemperature(temperature) && checkSoc(soc) && checkChargerate(chargeRate));
 }
 
 int Checktemperature(float temperature){
 int result = E_NOT_OK;
-if ((temperature < 0 || temperature > 45)
+if (temperature < 0 || temperature > 45)
 {
 result =  E_OK;
 }
