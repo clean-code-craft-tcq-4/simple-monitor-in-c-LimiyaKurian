@@ -7,35 +7,37 @@ return (Checktemperature(temperature) && checkSoc(soc) && checkChargerate(charge
 }
 
 int Checktemperature(float temperature){
-int result = E_OK;
-if (temperature < 0 || temperature > 45)
-{
-printf("Temperature out of range!\n");
-result =  E_NOT_OK;
-}
-return result;
+return checkparameter(temperature,TEMP_MIN,TEMP_MAX) ;
 }
 
 int checkSoc(float soc){
-int result = E_OK;
-if(soc < 20 || soc > 80)
+return checkparameter(soc, SOC_MIN, SOC_MAX);
+}
+
+int checkChargerate(float chargeRate){
+return checkparalimit(chargeRate,CHARGE_LIMIT);
+}
+
+int checkparametermargin(float param,float min_margin , float max_margin)
 {
-printf("State of Charge out of range!\n");
-result =  E_NOT_OK;
+int result = E_OK;
+if(param < min_margin || param > max_margin){
+printf("%f  out of range!\n", param);
+result = E_NOT_OK;
 }
 return result;
 }
 
-int checkChargerate(float chargeRate){
-int result = E_OK;
-if(chargeRate > 0.8)
+int checkparalimit(float param, float limit)
 {
-printf("Charge Rate out of range!\n");
-result =  E_NOT_OK;
+int result = E_OK;
+if (param > limit){
+printf("%f  out of range!\n", param);
+result = E_NOT_OK;
 }
 return result;
 }
-    
+
 int main() {
   assert(batteryIsOk(25, 70, 0.7));
   assert(!batteryIsOk(50, 85, 0));
