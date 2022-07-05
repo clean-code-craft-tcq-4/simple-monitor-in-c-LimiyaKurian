@@ -13,30 +13,30 @@ return (Checktemperature(temperature) && checkSoc(soc) && checkChargerate(charge
 }
 
 int Checktemperature(float temperature){
-int result = E_NOT_OK;
+int result = E_OK;
 if (temperature < 0 || temperature > 45)
 {
-result =  E_OK;
+result =  E_NOT_OK;
 }
 printf("%d", result);
 return result;
 }
 
 int checkSoc(float soc){
-int result = E_NOT_OK;
+int result = E_OK;
 if(soc < 20 || soc > 80)
 {
-result =  E_OK;
+result =  E_NOT_OK;
 }
 printf("%d", result);
 return result;
 }
 
 int checkChargerate(float chargeRate){
-int result = E_NOT_OK;
+int result = E_OK;
 if(chargeRate > 0.8)
 {
-result =  E_OK;
+result =  E_NOT_OK;
 }
 printf("%d", result);
 return result;
