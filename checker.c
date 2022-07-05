@@ -18,6 +18,7 @@ if (temperature < 0 || temperature > 45)
 {
 result =  E_OK;
 }
+printf("%d", result);
 return result;
 }
 
@@ -27,6 +28,7 @@ if(soc < 20 || soc > 80)
 {
 result =  E_OK;
 }
+printf("%d", result);
 return result;
 }
 
@@ -36,6 +38,7 @@ if(chargeRate > 0.8)
 {
 result =  E_OK;
 }
+printf("%d", result);
 return result;
 }
     
