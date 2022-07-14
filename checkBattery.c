@@ -59,7 +59,7 @@ int checkParameterMargin(float param,float min_margin , float max_margin)
 
 void IsReachingWarningLevel(char *param,float value,float min_margin , float max_margin)
 {
-    int result = E_OK
+    int result = E_OK;
     float tol_percent = 0.05;
     float tolerance = (max_margin * tol_percent);
     
