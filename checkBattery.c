@@ -60,11 +60,11 @@ void IsReachingWarningLevel(char *param,float value,float min_margin , float max
     float tol_percent = 0.05;
     float tolerance = (max_margin * tol_percent);
     
-    if ((value > min_margin) && (value <= (min_margin+tolerance)))
+    if (value <= (min_margin+tolerance))
     {
         printf("Warning! %s reaching minimum level\n",param);
     }
-    else if ((value >= (max_margin - tolerance)) && (value < max_margin))
+    else if (value >= (max_margin - tolerance))
     {
         printf("Warning! %s reaching maximum level\n",param);
     }
