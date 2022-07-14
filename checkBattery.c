@@ -90,6 +90,6 @@ int main() {
   assert(batteryIsOk(25, 70, 0.7));    //all parameters are in range
   assert(!batteryIsOk(50, 85, 0));     //Temp, Soc out of range
   assert(!batteryIsOk(44, 77, 0.9));   //Temp in warning state, Soc in warning state, Chargerate out of range
-  assert(!batteryIsOk(-1,21,0.7));
+  assert(!batteryIsOk(-1,21,0.6));     //
 }
     
