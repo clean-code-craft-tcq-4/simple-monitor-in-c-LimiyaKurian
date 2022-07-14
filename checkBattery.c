@@ -15,8 +15,8 @@ int Checktemperature(float temperature)
 {
     int result;
     char name[] = "Temperature";
-    result = checkParameterMargin(GET_TEMPERATURE_IN_C(temperature),TEMP_MIN,TEMP_MAX) ; 
-    IsReachingWarningLevel(name,GET_TEMPERATURE_IN_C(temperature),TEMP_MIN,TEMP_MAX);
+    result = checkParameterMargin(GET_TEMPERATURE_IN_CELCIUS(temperature),TEMP_MIN,TEMP_MAX) ; 
+    IsReachingWarningLevel(name,GET_TEMPERATURE_IN_CELCIUS(temperature),TEMP_MIN,TEMP_MAX);
     return result;
 }
 
@@ -64,11 +64,11 @@ void IsReachingWarningLevel(char *param,float value,float min_margin , float max
     
     if ((value > min_margin) && (value <= (min_margin+tolerance)))
     {
-        printf("Warning! %s reaching minimum level\n",param,value);
+        printf("Warning! %s reaching minimum level\n",param);
     }
     else if ((value >= (max_margin - tolerance)) && (value < max_margin))
     {
-        printf("Warning! %s reaching maximum level\n",param,value);
+        printf("Warning! %s reaching maximum level\n",param);
     }
     else
     {
