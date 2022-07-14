@@ -14,10 +14,9 @@ float convertFarenheitToCelcius(float temp)
 int Checktemperature(float temperature)
 {
     int result;
-	  float temp_conv = convertFarenheitToCelcius(temperature);
     char name[] = "Temperature";
-    result = checkParameterMargin(temp_conv,TEMP_MIN,TEMP_MAX) ; 
-    IsReachingWarningLevel(name,temp_conv,TEMP_MIN,TEMP_MAX);
+    result = checkParameterMargin(GET_TEMPERATURE_IN_C(temperature),TEMP_MIN,TEMP_MAX) ; 
+    IsReachingWarningLevel(name,GET_TEMPERATURE_IN_C(temperature),TEMP_MIN,TEMP_MAX);
     return result;
 }
 
@@ -83,15 +82,15 @@ int checkParameterLimit(float param, float limit)
 	int result = E_OK;
 	if (param > limit)
 	{
-		  printf("%f  out of range!\n", param);
-		  result = E_NOT_OK;
+	    printf("%f  out of range!\n", param);
+	    result = E_NOT_OK;
 	}
 	else
 	{
-       printf("%f In range!\n",param);
-       result = E_OK;
-   }
-return result;
+	    printf("%f In range!\n",param);
+            result = E_OK;
+        }
+        return result;
 }
 
 int main() {
