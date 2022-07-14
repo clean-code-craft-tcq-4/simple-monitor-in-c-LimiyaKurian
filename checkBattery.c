@@ -15,7 +15,8 @@ int Checktemperature(float temperature)
 {
     int result;
     char name[] = "Temperature";
-    result = checkParameterMargin(GET_TEMPERATURE_IN_CELCIUS(temperature),TEMP_MIN,TEMP_MAX) ; 
+    result = checkParameterMargin(GET_TEMPERATURE_IN_CELCIUS(temperature),TEMP_MIN,TEMP_MAX) ;
+    if(result == E_OK)
     IsReachingWarningLevel(name,GET_TEMPERATURE_IN_CELCIUS(temperature),TEMP_MIN,TEMP_MAX);
     return result;
 }
@@ -24,6 +25,7 @@ int checkSoc(float soc){
     int result;
     char name[] = "Soc";
     result = checkParameterMargin(soc, SOC_MIN, SOC_MAX) ;
+    if(result == E_OK)
     IsReachingWarningLevel(name,soc, SOC_MIN, SOC_MAX);
     return result;
 }
@@ -32,6 +34,7 @@ int checkChargerate(float chargeRate){
     int result;
     char name[] = "chargeRate";
     result = checkParameterLimit(chargeRate,CHARGE_LIMIT) ;
+    if(result == E_OK)
     IsReachingWarningLevel(name,chargeRate,0.0,CHARGE_LIMIT);
     return result;
 }
@@ -39,26 +42,21 @@ int checkChargerate(float chargeRate){
 int checkParameterMargin(float param,float min_margin , float max_margin)
 {
     int result = E_OK;
-    
-
     if(param < min_margin || param > max_margin)
     {
         printf("%f  out of range!\n", param);
         result = E_NOT_OK;
     }
-
     else 
     {
         printf("%f In range!\n",param);
         result = E_OK;
     }
-
     return result;
 }
 
 void IsReachingWarningLevel(char *param,float value,float min_margin , float max_margin)
 {
-    int result = E_OK;
     float tol_percent = 0.05;
     float tolerance = (max_margin * tol_percent);
     
@@ -70,11 +68,6 @@ void IsReachingWarningLevel(char *param,float value,float min_margin , float max
     {
         printf("Warning! %s reaching maximum level\n",param);
     }
-    else
-    {
-        printf("%f Safe Zone!\n",value);
-    }
-
 }
 
 int checkParameterLimit(float param, float limit)
