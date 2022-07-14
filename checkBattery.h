@@ -12,3 +12,4 @@ int checkSoc(float soc);
 int checkChargerate(float chargeRate);
 int checkParameterMargin(float param,float min_margin , float max_margin);
 int checkParameterLimit(float param, float limit);
+void IsReachingWarningLevel(char *param,float value,float min_margin , float max_margin);
