@@ -91,5 +91,6 @@ int main() {
   assert(!batteryIsOk(50, 85, 0));     //Temp, Soc out of range
   assert(!batteryIsOk(44, 77, 0.9));   //Temp in warning state, Soc in warning state, Chargerate out of range
   assert(!batteryIsOk(-1,21,0.6));     //
+  assert(batteryIsOk(1,23,0.8));
 }
     
